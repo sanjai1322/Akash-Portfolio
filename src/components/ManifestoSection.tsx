@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { PORTFOLIO_DATA } from '../data/portfolioData.ts';
 import { EDITORIAL_EASE } from '../utils/motion.ts';
+import { AnimatedText } from './AnimatedText.tsx';
 
 interface ManifestoSectionProps {
   selectedTech: string | null;
@@ -32,17 +33,12 @@ export const ManifestoSection: React.FC<ManifestoSectionProps> = ({ selectedTech
           />
         </motion.div>
 
-        {/* Headline */}
-        <motion.h2
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-50px' }}
-          transition={{ duration: 0.7, ease: EDITORIAL_EASE }}
-          className="font-['Plus_Jakarta_Sans'] text-[42px] sm:text-[62px] lg:text-[76px] leading-[1.05] tracking-tight font-bold text-slate-900 max-w-5xl"
-        >
-          Built on precision.{' '}
-          <span className="italic font-light text-[#285bff]">Driven</span>{' '}by quality.
-        </motion.h2>
+        {/* Headline with word-by-word reveal */}
+        <h2 className="font-['Plus_Jakarta_Sans'] text-[34px] sm:text-[54px] lg:text-[76px] leading-[1.08] sm:leading-[1.05] tracking-tight font-bold text-slate-900 max-w-5xl">
+          <AnimatedText text="Built on precision." delay={0.1} />{' '}
+          <span className="italic font-light text-[#285bff]">Driven</span>{' '}
+          <AnimatedText text="by quality." delay={0.3} />
+        </h2>
 
         {/* Asymmetric 2-Column Spread */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-baseline">

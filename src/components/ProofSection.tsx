@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'motion/react';
 import { PORTFOLIO_DATA, ExhibitItem } from '../data/portfolioData.ts';
 import { EDITORIAL_EASE } from '../utils/motion.ts';
+import { AnimatedText } from './AnimatedText.tsx';
 
 interface ProofSectionProps {
   onOpenLightbox: (exhibit: ExhibitItem) => void;
@@ -25,8 +26,9 @@ export const ProofSection: React.FC<ProofSectionProps> = ({ onOpenLightbox }) =>
             <span className="font-['JetBrains_Mono'] text-xs font-semibold text-[#b8c4ff] uppercase tracking-widest">
               06 / PROVEN RECORD
             </span>
-            <h2 className="font-['Plus_Jakarta_Sans'] text-4xl sm:text-5xl font-bold text-white mt-2 tracking-tight">
-              Proof in the{' '}<span className="italic font-light text-[#b8c4ff]">work</span>.
+            <h2 className="font-['Plus_Jakarta_Sans'] text-3xl sm:text-5xl font-bold text-white mt-2 tracking-tight">
+              <AnimatedText text="Proof in the" delay={0.1} />{' '}
+              <span className="italic font-light text-[#b8c4ff]">work</span>.
             </h2>
           </div>
           <p className="font-['Inter'] text-sm text-[#8d90a2] max-w-sm">

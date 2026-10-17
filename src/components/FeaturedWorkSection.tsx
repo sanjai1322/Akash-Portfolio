@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'motion/react';
 import { PORTFOLIO_DATA } from '../data/portfolioData.ts';
 import { TestExecutionResult } from '../utils/telemetry.ts';
 import { EDITORIAL_EASE } from '../utils/motion.ts';
+import { AnimatedText } from './AnimatedText.tsx';
 
 export const FeaturedWorkSection: React.FC = () => {
   const { featuredProject } = PORTFOLIO_DATA;
@@ -82,8 +83,10 @@ export const FeaturedWorkSection: React.FC = () => {
             <span className="font-['JetBrains_Mono'] text-xs font-semibold text-[#b8c4ff] uppercase tracking-widest">
               04 / CASE STUDY DOSSIER
             </span>
-            <h2 className="font-['Plus_Jakarta_Sans'] text-4xl sm:text-5xl lg:text-6xl font-bold text-white mt-2 tracking-tight">
-              Engineering <span className="italic font-light text-[#b8c4ff]">better</span>{' '}releases.
+            <h2 className="font-['Plus_Jakarta_Sans'] text-3xl sm:text-5xl lg:text-6xl font-bold text-white mt-2 tracking-tight">
+              <AnimatedText text="Engineering" delay={0.1} />{' '}
+              <span className="italic font-light text-[#b8c4ff]">better</span>{' '}
+              <AnimatedText text="releases." delay={0.25} />
             </h2>
           </div>
           <div className="font-['Plus_Jakarta_Sans'] text-xs font-bold text-[#8d90a2] uppercase tracking-widest">

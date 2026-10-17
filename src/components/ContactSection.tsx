@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion } from 'motion/react';
 import { PORTFOLIO_DATA } from '../data/portfolioData.ts';
 import { EDITORIAL_EASE } from '../utils/motion.ts';
+import { AnimatedText } from './AnimatedText.tsx';
 
 interface ContactSectionProps {
   onOpenContactModal: () => void;
@@ -52,15 +53,10 @@ export const ContactSection: React.FC<ContactSectionProps> = ({
 
           {/* Monumental Headline */}
           <div className="space-y-4">
-            <motion.h2
-              initial={{ opacity: 0, y: 30 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true, margin: '-50px' }}
-              transition={{ duration: 0.8, ease: EDITORIAL_EASE }}
-              className="font-['Plus_Jakarta_Sans'] text-[48px] sm:text-[76px] lg:text-[96px] leading-[0.98] font-bold text-white tracking-tight max-w-5xl"
-            >
-              Let’s make software <span className="italic font-light text-[#b8c4ff]">better</span>.
-            </motion.h2>
+            <h2 className="font-['Plus_Jakarta_Sans'] text-[38px] sm:text-[68px] lg:text-[96px] leading-[1.05] sm:leading-[0.98] font-bold text-white tracking-tight max-w-5xl">
+              <AnimatedText text="Let’s make software" delay={0.1} />{' '}
+              <span className="italic font-light text-[#b8c4ff]">better</span>.
+            </h2>
             <motion.p
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
